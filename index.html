@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arma tu PC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/reset.css">
+    <link rel="stylesheet" href="Css/styles.css">
+    </head>
+<body>
+    <!-- BLOQUE HEADER -->
+    <header>
+        <img src="Media/nadaWebLogo1.png" alt="Logo OneNada" height="70">
+        <h1>Arma tu PC</h1>
+
+    </header>
+    <!-- BLOQUE MAIN/FORMULARIO -->
+    <main>
+        <div>
+            <p id="error"></p>
+        </div>
+        <form action="#" id="formPrincipal" class="formContainer">
+            <div class="itemform">
+                <label for="motherBoard">Motherboard</label>
+                <select name="motherBoard" id="motherBoard" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Asrock B450M//AM4</option>
+                    <option value="2">Asrock B550M//AM4</option>
+                    <option value="3">MSI B450M//AM4</option>
+                    <option value="4">Gigabyte B450M//AM4</option>
+                </select>
+                <img class="itemImg" src="Media/mother1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="procesor">Procesador</label>
+                <select name="procesor" id="procesor" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Ryzen 3 3200G//AM4</option>
+                    <option value="2">Ryzen 5 3600G//AM4</option>
+                    <option value="3">Ryzen 5 5600G//AM4</option>
+                    <option value="4">Ryzen 5 5600X//AM4</option>
+                </select>
+                <img class="itemImg" src="Media/cpu1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="cooler">Cooler</label>
+                <select name="cooler" id="cooler" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Cooler incluido en el procesador</option>
+                    <option value="2">Thermaltake UX100</option>
+                    <option value="3">Deepcool UD551 ARGB</option>
+                    <option value="4">Cooler Master HyperT20</option>
+                </select>
+                <img class="itemImg" src="Media/cooler1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="mRam">Memoria Ram</label>
+                <select name="mRam" id="mRam" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Kingston DDR4 8GB 2666Mhz</option>
+                    <option value="2">Hikvision DDR4 8GB 3200Mhz</option>
+                    <option value="3">Crucial DDR4 8GB 3200Mhz</option>
+                    <option value="4">TForce DDR4 16GB 3200Mhz</option>
+                </select>
+                <img class="itemImg" src="Media/memo1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="gpu">Placa de video/GPU</label>
+                <select name="gpu" id="gpu" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Asrock RX 550 2GB</option>
+                    <option value="2">MSI RX 570 4GB</option>
+                    <option value="3">XFX RX 6600 8GB</option>
+                    <option value="4">XFX RX 6750XT 12GB</option>
+                </select>
+                <img class="itemImg" src="Media/gpu1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="storage">Almacenamiento</label>
+                <select name="storage" id="storage" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Team HDD 500GB</option>
+                    <option value="2">WD HDD 2TB</option>
+                    <option value="3">XPG SSD 1TB</option>
+                    <option value="4">XPG M2 2TB</option>
+                </select>
+                <img class="itemImg"src="Media/hhd1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="psu">Fuente de poder</label>
+                <select name="psu" id="psu" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Thermaltake 600W PLUS Bronze</option>
+                    <option value="2">Thermaltake 750W PLUS Gold</option>
+                    <option value="3">Be Quiet! 750W PLUS Bronze</option>
+                    <option value="4">Be Quiet! 850W PLUS Gold</option>
+                </select>
+                <img class="itemImg" src="Media/poder1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="case">Gabinete / Case</label>
+                <select name="case" id="case" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Cooler Master Masterbox</option>
+                    <option value="2">Cooler Master Masterbox White</option>
+                    <option value="3">Cougar MX410-T </option>
+                    <option value="4">Redragon GC-606B</option>
+                </select>
+                <img class="itemImg" src="Media/gabo1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+            <div class="itemform">
+                <label for="monitor">Monitor</label>
+                <select name="monitor" id="monitor" required>
+                    <option value="0">Selecciona</option>
+                    <option value="1">Samsung 24'</option>
+                    <option value="2">Samsung 27'</option>
+                    <option value="3">Asus 24'</option>
+                    <option value="4">Asus 27'</option>
+                </select>
+                <img class="itemImg" src="Media/moni1.png" alt="">
+                <img class="shopCart" src="Media/shopcartw.png" alt="" >
+                <input type="text" value="Precio" readonly>
+            </div>
+        </form>
+        <form action="#" id="formShop" class="formContainer">
+            <article>
+
+            </article>
+            <input type="text">
+            <input type="text">
+        </form>
+    </main>
+    <!-- BLOQUE FOOTER -->
+    <footer>
+        <p>Proyecto FrontEnd 'Arma tu PC'</p>
+
+    </footer>
+    <!-- CODIGO JS -->
+</body>
+</html>
