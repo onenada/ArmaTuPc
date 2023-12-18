@@ -22,131 +22,65 @@
         <div>
             <p id="error"></p>
         </div>
+    <!-- SELECCION DE COMPONENTES -->
         <form action="#" id="formPrincipal" class="formContainer">
+            <!-- SELECCION DE MOTHERBOARD -->
             <div class="itemform">
                 <label for="motherBoard">Motherboard</label>
                 <select name="motherBoard" id="motherBoard" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Asrock B450M//AM4</option>
-                    <option value="2">Asrock B550M//AM4</option>
-                    <option value="3">MSI B450M//AM4</option>
-                    <option value="4">Gigabyte B450M//AM4</option>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/mother1.png">Selecciona</option>
+                    <option value="1" data-precio="110.000" data-imagen="Media/Motherboards/AB450M.png">Asrock B450M//AM4</option>
+                    <option value="2" data-precio="150.000" data-imagen="Media/Motherboards/AB550M.png">Asrock B550M//AM4</option>
+                    <option value="3" data-precio="162.000" data-imagen="Media/Motherboards/MSIB450M.png">MSI B450M//AM4</option>
+                    <option value="4" data-precio="178.000" data-imagen="Media/Motherboards/GIGAB450M.png">Gigabyte B450M//AM4</option>
                 </select>
-                <img class="itemImg" src="Media/mother1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
+                <img class="itemImg" src="Media/Icons/mother1.png" alt="" id="imgMother" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartMotherb">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioMother" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartMother" readonly>
+                    <input type="button" value="Quitar" id="motherBoardBtn" >
+                </div>
             </div>
+            <!-- SELECCION DE PROCESADOR -->
             <div class="itemform">
                 <label for="procesor">Procesador</label>
                 <select name="procesor" id="procesor" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Ryzen 3 3200G//AM4</option>
-                    <option value="2">Ryzen 5 3600G//AM4</option>
-                    <option value="3">Ryzen 5 5600G//AM4</option>
-                    <option value="4">Ryzen 5 5600X//AM4</option>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/cpu1.png">Selecciona</option>
+                    <option value="1" data-precio="136.000" data-imagen="Media/Procesors/3200G.jpg">Ryzen  3 3200G</option>
+                    <option value="2" data-precio="197.000" data-imagen="Media/Procesors/3600G.jpg">Ryzen  5 3600G</option>
+                    <option value="3" data-precio="430.000" data-imagen="Media/Procesors/5700X.jpg">Ryzen  7 5700X</option>
+                    <option value="4" data-precio="1.100.000" data-imagen="Media/Procesors/7900X3D.jpg">Ryzen  7 7900X3D</option>
                 </select>
-                <img class="itemImg" src="Media/cpu1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
+                <img class="itemImg" src="Media/Icons/cpu1.png" alt="" id="imgProcesor" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartProcesor">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioProcesor" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartProcesor" readonly>
+                    <input type="button" value="Quitar" id="procesorBtn" >
+                </div>
             </div>
+            <!-- SELECCION DE COOLER -->
             <div class="itemform">
-                <label for="cooler">Cooler</label>
-                <select name="cooler" id="cooler" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Cooler incluido en el procesador</option>
-                    <option value="2">Thermaltake UX100</option>
-                    <option value="3">Deepcool UD551 ARGB</option>
-                    <option value="4">Cooler Master HyperT20</option>
+                <label for="procesor">Cooler</label>
+                <select name="procesor" id="cooler" required>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/cooler1.png">Selecciona</option>
+                    <option value="1" data-precio="86.000" data-imagen="Media/Coolers/COOLERMASTERHYPER.jpg">Cooler Master Hyper212</option>
+                    <option value="2" data-precio="197.000" data-imagen="Media/Coolers/CCW.jpg">REDRAGON CCW</option>
                 </select>
-                <img class="itemImg" src="Media/cooler1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="mRam">Memoria Ram</label>
-                <select name="mRam" id="mRam" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Kingston DDR4 8GB 2666Mhz</option>
-                    <option value="2">Hikvision DDR4 8GB 3200Mhz</option>
-                    <option value="3">Crucial DDR4 8GB 3200Mhz</option>
-                    <option value="4">TForce DDR4 16GB 3200Mhz</option>
-                </select>
-                <img class="itemImg" src="Media/memo1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="gpu">Placa de video/GPU</label>
-                <select name="gpu" id="gpu" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Asrock RX 550 2GB</option>
-                    <option value="2">MSI RX 570 4GB</option>
-                    <option value="3">XFX RX 6600 8GB</option>
-                    <option value="4">XFX RX 6750XT 12GB</option>
-                </select>
-                <img class="itemImg" src="Media/gpu1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="storage">Almacenamiento</label>
-                <select name="storage" id="storage" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Team HDD 500GB</option>
-                    <option value="2">WD HDD 2TB</option>
-                    <option value="3">XPG SSD 1TB</option>
-                    <option value="4">XPG M2 2TB</option>
-                </select>
-                <img class="itemImg"src="Media/hhd1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="psu">Fuente de poder</label>
-                <select name="psu" id="psu" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Thermaltake 600W PLUS Bronze</option>
-                    <option value="2">Thermaltake 750W PLUS Gold</option>
-                    <option value="3">Be Quiet! 750W PLUS Bronze</option>
-                    <option value="4">Be Quiet! 850W PLUS Gold</option>
-                </select>
-                <img class="itemImg" src="Media/poder1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="case">Gabinete / Case</label>
-                <select name="case" id="case" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Cooler Master Masterbox</option>
-                    <option value="2">Cooler Master Masterbox White</option>
-                    <option value="3">Cougar MX410-T </option>
-                    <option value="4">Redragon GC-606B</option>
-                </select>
-                <img class="itemImg" src="Media/gabo1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
-            </div>
-            <div class="itemform">
-                <label for="monitor">Monitor</label>
-                <select name="monitor" id="monitor" required>
-                    <option value="0">Selecciona</option>
-                    <option value="1">Samsung 24'</option>
-                    <option value="2">Samsung 27'</option>
-                    <option value="3">Asus 24'</option>
-                    <option value="4">Asus 27'</option>
-                </select>
-                <img class="itemImg" src="Media/moni1.png" alt="">
-                <img class="shopCart" src="Media/shopcartw.png" alt="" >
-                <input type="text" value="Precio" readonly>
+                <img class="itemImg" src="Media/Icons/cooler1.png" alt="" id="imgCooler" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartCooler">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioCooler" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartCooler" readonly>
+                    <input type="button" value="Quitar" id="coolerBtn" >
+                </div>
             </div>
         </form>
-        <form action="#" id="formShop" class="formContainer">
-            <article>
-
-            </article>
-            <input type="text">
-            <input type="text">
+    <!-- PRECIO TOTAL -->
+        <form action="#" class="formContainer">
+            <label for="precioTotal">Total</label>
+            <input type="text" value="Precio Total" name="precioTotal">
         </form>
     </main>
     <!-- BLOQUE FOOTER -->
@@ -155,5 +89,6 @@
 
     </footer>
     <!-- CODIGO JS -->
+    <script src="Js/app.js"></script>
 </body>
 </html>
