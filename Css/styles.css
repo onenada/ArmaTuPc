@@ -77,6 +77,7 @@ img{
 /* Selectores de Class */
 
 .formContainer{
+    display: flex;
     background-color: white;
     width: 420px;
     margin: 30px auto 30px auto;
@@ -107,8 +108,8 @@ img{
 /* Selectores de IDs */
 
 #compGrid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     justify-content: space-between;
     grid-gap: 10 px;
     align-content: space-around;
