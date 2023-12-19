@@ -22,6 +22,7 @@
         <div>
             <p id="error"></p>
         </div>
+        <section id="compGrid">
     <!-- SELECCION DE COMPONENTES -->
         <form action="#" id="formPrincipal" class="formContainer">
             <!-- SELECCION DE MOTHERBOARD -->
@@ -77,11 +78,83 @@
                 </div>
             </div>
         </form>
-    <!-- PRECIO TOTAL -->
-        <form action="#" class="formContainer">
+    <!-- SELECCION DE COMPONENTES 2 -->
+        <form action="#" id="formPrincipal2" class="formContainer">
+                <!-- SELECCION DE MEMORIA RAM -->
+            <div class="itemform">
+                <label for="ram">Memoria ram</label>
+                <select name="ram" id="ram" required>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/memo1.png">Selecciona</option>
+                    <option value="1" data-precio="36.000" data-imagen="Media/Ram/TEAM8GB.jpg">TForce 8GB</option>
+                    <option value="2" data-precio="76.000" data-imagen="Media/Ram/ADATA2X8GB.jpg">ADATA 2x8GB</option>
+                    <option value="3" data-precio="126.000" data-imagen="Media/Ram/TEAM2X16GB.jpg">TForce 2x16GB</option>
+                </select>
+                <img class="itemImg" src="Media/Icons/memo1.png" alt="" id="imgRam" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartRam">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioRam" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartRam" readonly>
+                    <input type="button" value="Quitar" id="ramBtn">
+                </div>
+            </div>
+                <!-- SELECCION DE GPU -->
+            <div class="itemform">
+                <label for="gpu">GPU</label>
+                <select name="gpu" id="gpu" required>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/gpu1.png">Selecciona</option>
+                    <option value="1" data-precio="436.000" data-imagen="Media/Gpu/XFXRX6650XT.jpg">XFX RX 6650XT</option>
+                    <option value="2" data-precio="476.000" data-imagen="Media/Gpu/GTX1660S.jpg">Geforce GTX 1660 SUPER</option>
+                    <option value="3" data-precio="556.000" data-imagen="Media/Gpu/XFXRX7600.jpg">XFX RX 7600</option>
+                </select>
+                <img class="itemImg" src="Media/Icons/gpu1.png" alt="" id="imgGpu" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartGpu">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioGpu" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartGpu" readonly>
+                    <input type="button" value="Quitar" id="gpuBtn">
+                </div>
+            </div>
+                <!-- SELECCION DE ALMACENAMIENTO -->
+            <div class="itemform">
+                <label for="storage">Almacenamiento</label>
+                <select name="storage" id="storage" required>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/hdd1.png">Selecciona</option>
+                    <option value="1" data-precio="36.000" data-imagen="Media/Storage/Seagate1TBHDD.jpg">Seagate 1TB HDD</option>
+                    <option value="2" data-precio="76.000" data-imagen="Media/Storage/TForce240GBSSD.jpg">TForce 240GB SSD</option>
+                    <option value="3" data-precio="156.000" data-imagen="Media/Storage/XPG1TBM2.jpg">XPG 1TB M2</option>
+                </select>
+                <img class="itemImg" src="Media/Icons/hdd1.png" alt="" id="imgStorage" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartStorage">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioStorage" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartStorage" readonly>
+                    <input type="button" value="Quitar" id="storageBtn">
+                </div>
+            </div>
+        </form>        
+    <!-- SELECCION DE PSU Y PRECIO TOTAL -->
+        <form action="#" class="totalContainer">
+                <!-- SELECCION DE PSU -->
+            <div class="itemform">
+                <label for="psu">Fuente de poder</label>
+                <select name="psu" id="psu" required>
+                    <option value="0" data-precio="Precio" data-imagen="Media/Icons/poder1.png">Selecciona</option>
+                    <option value="1" data-precio="136.000" data-imagen="Media/Psu/BEQUIET650W.jpg">Be Quiet 650W+Bronce</option>
+                    <option value="2" data-precio="176.000" data-imagen="Media/Psu/COOLERMASTER750W.jpg">Cooler Master 750W +Gold</option>
+                    <option value="3" data-precio="206.000" data-imagen="Media/Psu/BEQUIET850W.jpg">Be Quiet 850W+Gold</option>
+                </select>
+                <img class="itemImg" src="Media/Icons/poder1.png" alt="" id="imgPsu" draggable="true">
+                <img class="shopCart" src="Media/Icons/shopcart.png" alt="" id="shopCartPsu">
+                <div class="finalItem">
+                    <input type="text" value="Precio" id="precioPsu" readonly>
+                    <input type="text" class="precioObj" value="Vació" id="objCartPsu" readonly>
+                    <input type="button" value="Quitar" id="psuBtn">
+                </div>
+            </div>
             <label for="precioTotal">Total</label>
-            <input type="text" value="Precio Total" name="precioTotal">
+            <input type="text" value="Precio Total" name="precioTotal" id="total">
         </form>
+    </section>
     </main>
     <!-- BLOQUE FOOTER -->
     <footer>
