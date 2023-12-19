@@ -2,73 +2,64 @@
 //@link https://github.com/onenada/ArmaTuPc //
 
 // ------------------- Variables ---------------------- //
-
-
+var preciosObj;
+var totalObj;
+// Variables de Motherboard //
 var motherItem;
+var selectMother;
+var precioMother;
+var imgMother;
+var motherShopC;
+var objCartMother;
+var motherBoardBtn;
+// Variables de Procesador //
 var procItem;
+var selectProc;
+var precioProc;
+var imgProc;
+var procShopC;
+var objCartProc;
+var procesorBtn;
+// Variables de Cooler //
 var coolerITem;
-var ramItem;
-var gpuItem;
-var storageItem;
-var psuItem;
-
-
-// ----------------- Carga de objetos DOM ------------- //
-
-//Objetos de Motherboard//
-const selectMother=document.getElementById('motherBoard');
-const precioMother=document.getElementById('precioMother');
-const imgMother=document.getElementById('imgMother');
-const motherShopC=document.getElementById('shopCartMotherb');
-const ObjCartMother=document.getElementById('objCartMother');
-const motherBoardBtn=document.getElementById('motherBoardBtn');
-//Objetos de Procesador//
-const selectProc=document.getElementById('procesor');
-const precioProc=document.getElementById('precioProcesor');
-const imgProc=document.getElementById('imgProcesor');
-const procShopC=document.getElementById('shopCartProcesor');
-const ObjCartProc=document.getElementById('objCartProcesor');
-const procesorBtn=document.getElementById('procesorBtn');
-//Objetos de Cooler//
-const selectCooler=document.getElementById('cooler');
-const precioCooler=document.getElementById('precioCooler');
-const imgCooler=document.getElementById('imgCooler');
-const coolerShopC=document.getElementById('shopCartCooler');
-const ObjCartCooler=document.getElementById('objCartCooler');
-const coolerBtn=document.getElementById('coolerBtn');
-//Objetos de Ram//
-const selectRam=document.getElementById('ram');
-const precioRam=document.getElementById('precioRam');
-const imgRam=document.getElementById('imgRam');
-const ramShopC=document.getElementById('shopCartRam');
-const ObjCartRam=document.getElementById('objCartRam');
-const ramBtn=document.getElementById('ramBtn');
-//Objetos de GPU//
-const selectGpu=document.getElementById('gpu');
-const precioGpu=document.getElementById('precioGpu');
-const imgGpu=document.getElementById('imgGpu');
-const gpuShopC=document.getElementById('shopCartGpu');
-const ObjCartGpu=document.getElementById('objCartGpu');
-const gpuBtn=document.getElementById('gpuBtn');
-//Objetos de Storage//
-const selectStorage=document.getElementById('storage');
-const precioStorage=document.getElementById('precioStorage');
-const imgStorage=document.getElementById('imgStorage');
-const storageShopC=document.getElementById('shopCartStorage');
-const ObjCartStorage=document.getElementById('objCartStorage');
-const storageBtn=document.getElementById('storageBtn');
-//Objetos de PSU//
-const selectPsu=document.getElementById('psu');
-const precioPsu=document.getElementById('precioPsu');
-const imgPsu=document.getElementById('imgPsu');
-const psuShopC=document.getElementById('shopCartPsu');
-const ObjCartPsu=document.getElementById('objCartPsu');
-const psuBtn=document.getElementById('psuBtn');
-//Carga de precios en el cesto //
-const preciosObj=document.getElementsByClassName('precioObj')
-// Carga de Resultado total //
-const totalOBj=document.getElementById('total')
-
+var selectCooler;
+var precioCooler;
+var imgCooler;
+var coolerShopC;
+var objCartCooler;
+var coolerBtn;
+// Variables de Ram //
+var ramITem;
+var selectRam;
+var precioRam;
+var imgRam;
+var ramShopC;
+var objCartRam;
+var ramBtn;
+// Variables de GPU //
+var gpuITem;
+var selectGpu;
+var precioGpu;
+var imgGpu;
+var gpuShopC;
+var objCartGpu;
+var gpuBtn;
+// Variables de Storage //
+var storageITem;
+var selectStorage;
+var precioStorage;
+var imgStorage;
+var storageShopC;
+var objCartStorage;
+var storageBtn;
+// Variables de PSU //
+var psuITem;
+var selectPsu;
+var precioPsu;
+var imgPsu;
+var psuShopC;
+var objCartPsu;
+var psuBtn;
 
 // ------------------- Funciones ---------------------- //
 
@@ -93,7 +84,7 @@ function cambiarMother(event){
 //Botón de reset para el modulo de motherboard//
 function resetMother(){
     motherShopC.src='Media/Icons/shopcart.png';
-    ObjCartMother.value='Vació';
+    ObjCartMother.value='Vacio';
 }
 
 //Funciones de Procesador//
@@ -117,7 +108,7 @@ function cambiarProc(event){
 //Botón de reset para el modulo de procesador//
 function resetProcesor(){
     procShopC.src='Media/Icons/shopcart.png';
-    ObjCartProc.value='Vació';
+    ObjCartProc.value='Vacio';
 }
 
 //Funciones de Cooler//
@@ -141,7 +132,7 @@ function cambiarCooler(event){
 //Botón de reset para el modulo de cooler//
 function resetCooler(){
     coolerShopC.src='Media/Icons/shopcart.png';
-    ObjCartCooler.value='Vació';
+    ObjCartCooler.value='Vacio';
 }
 
 //Funciones de Ram//
@@ -165,7 +156,7 @@ function cambiarRam(event){
 //Botón de reset para el modulo de ram//
 function resetRam(){
     ramShopC.src='Media/Icons/shopcart.png';
-    ObjCartRam.value='Vació';
+    ObjCartRam.value='Vacio';
 }
 //Funciones de Gpu//
 
@@ -188,7 +179,7 @@ function cambiarGpu(event){
 //Botón de reset para el modulo de gpu//
 function resetGpu(){
     gpuShopC.src='Media/Icons/shopcart.png';
-    ObjCartGpu.value='Vació';
+    ObjCartGpu.value='Vacio';
 }
 //Funciones de Storage//
 
@@ -211,7 +202,7 @@ function cambiarStorage(event){
 //Botón de reset para el modulo de storage//
 function resetStorage(){
     storageShopC.src='Media/Icons/shopcart.png';
-    ObjCartStorage.value='Vació';
+    ObjCartStorage.value='Vacio';
 }
 //Funciones de PSU//
 
@@ -234,7 +225,7 @@ function cambiarPsu(event){
 //Botón de reset para el modulo de PSU//
 function resetPsu(){
     psuShopC.src='Media/Icons/shopcart.png';
-    ObjCartPsu.value='Vació';
+    ObjCartPsu.value='Vacio';
 }
 //Funcion para sumar cada objeto seleccionado en el cesto//
 
@@ -243,72 +234,130 @@ function sumTotal() {
 
     for (let item of preciosObj) {
         // Verifica si el valor no es una cadena vacía y es un número
-        if (item.value !== "Vació" && !isNaN(item.value)) {
+        if (item.value !== "Vacio" && !isNaN(item.value)) {
             // Convierte el valor a número y suma al total
+            console.log(item.value);
             total += parseFloat(item.value);
         }
     }
-    totalOBj.value= total
+    totalObj.value= total
 
 }
 
+//Funcion para cargar objetos del DOM // 
 
-// -------------------- Eventos Drag&Drop --------------------- //
+function domCargado(){
+    //Objetos de Motherboard//
+    selectMother=document.getElementById('motherBoard');
+    precioMother=document.getElementById('precioMother');
+    imgMother=document.getElementById('imgMother');
+    motherShopC=document.getElementById('shopCartMotherb');
+    ObjCartMother=document.getElementById('objCartMother');
+    motherBoardBtn=document.getElementById('motherBoardBtn');
+    //Objetos de Procesador//
+    selectProc=document.getElementById('procesor');
+    precioProc=document.getElementById('precioProcesor');
+    imgProc=document.getElementById('imgProcesor');
+    procShopC=document.getElementById('shopCartProcesor');
+    ObjCartProc=document.getElementById('objCartProcesor');
+    procesorBtn=document.getElementById('procesorBtn');
+    //Objetos de Cooler//
+    selectCooler=document.getElementById('cooler');
+    precioCooler=document.getElementById('precioCooler');
+    imgCooler=document.getElementById('imgCooler');
+    coolerShopC=document.getElementById('shopCartCooler');
+    ObjCartCooler=document.getElementById('objCartCooler');
+    coolerBtn=document.getElementById('coolerBtn');
+    //Objetos de Ram//
+    selectRam=document.getElementById('ram');
+    precioRam=document.getElementById('precioRam');
+    imgRam=document.getElementById('imgRam');
+    ramShopC=document.getElementById('shopCartRam');
+    ObjCartRam=document.getElementById('objCartRam');
+    ramBtn=document.getElementById('ramBtn');
+    //Objetos de GPU//
+    selectGpu=document.getElementById('gpu');
+    precioGpu=document.getElementById('precioGpu');
+    imgGpu=document.getElementById('imgGpu');
+    gpuShopC=document.getElementById('shopCartGpu');
+    ObjCartGpu=document.getElementById('objCartGpu');
+    gpuBtn=document.getElementById('gpuBtn');
+    //Objetos de Storage//
+    selectStorage=document.getElementById('storage');
+    precioStorage=document.getElementById('precioStorage');
+    imgStorage=document.getElementById('imgStorage');
+    storageShopC=document.getElementById('shopCartStorage');
+    ObjCartStorage=document.getElementById('objCartStorage');
+    storageBtn=document.getElementById('storageBtn');
+    //Objetos de PSU//
+    selectPsu=document.getElementById('psu');
+    precioPsu=document.getElementById('precioPsu');
+    imgPsu=document.getElementById('imgPsu');
+    psuShopC=document.getElementById('shopCartPsu');
+    ObjCartPsu=document.getElementById('objCartPsu');
+    psuBtn=document.getElementById('psuBtn');
+    //Carga de precios en el cesto //
+    preciosObj=document.getElementsByClassName('precioObj');
+    // Carga de Resultado total //
+    totalObj=document.getElementById('total');
 
-//Eventos DnD de Motherboard//
-imgMother.addEventListener('dragstart',moviendoMother);
-motherShopC.addEventListener('dragover',event=>{event.preventDefault()});
-motherShopC.addEventListener('drop', cambiarMother);
-//Eventos DnD de Procesador//
-imgProc.addEventListener('dragstart',moviendoProc);
-procShopC.addEventListener('dragover',event=>{event.preventDefault()});
-procShopC.addEventListener('drop', cambiarProc);
-//Eventos DnD de Cooler//
-imgCooler.addEventListener('dragstart',moviendoCooler);
-coolerShopC.addEventListener('dragover',event=>{event.preventDefault()});
-coolerShopC.addEventListener('drop', cambiarCooler);
-//Eventos DnD de Ram//
-imgRam.addEventListener('dragstart',moviendoRam);
-ramShopC.addEventListener('dragover',event=>{event.preventDefault()});
-ramShopC.addEventListener('drop', cambiarRam);
-//Eventos DnD de GPU//
-imgGpu.addEventListener('dragstart',moviendoGpu);
-gpuShopC.addEventListener('dragover',event=>{event.preventDefault()});
-gpuShopC.addEventListener('drop', cambiarGpu);
-//Eventos DnD de Storage//
-imgStorage.addEventListener('dragstart',moviendoStorage);
-storageShopC.addEventListener('dragover',event=>{event.preventDefault()});
-storageShopC.addEventListener('drop', cambiarStorage);
-//Eventos DnD de PSU//
-imgPsu.addEventListener('dragstart',moviendoPsu);
-psuShopC.addEventListener('dragover',event=>{event.preventDefault()});
-psuShopC.addEventListener('drop', cambiarPsu);
+    
+    //Eventos DnD de Motherboard//
+    imgMother.addEventListener('dragstart',moviendoMother);
+    motherShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    motherShopC.addEventListener('drop', cambiarMother);
+    //Eventos DnD de Procesador//
+    imgProc.addEventListener('dragstart',moviendoProc);
+    procShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    procShopC.addEventListener('drop', cambiarProc);
+    //Eventos DnD de Cooler//
+    imgCooler.addEventListener('dragstart',moviendoCooler);
+    coolerShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    coolerShopC.addEventListener('drop', cambiarCooler);
+    //Eventos DnD de Ram//
+    imgRam.addEventListener('dragstart',moviendoRam);
+    ramShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    ramShopC.addEventListener('drop', cambiarRam);
+    //Eventos DnD de GPU//
+    imgGpu.addEventListener('dragstart',moviendoGpu);
+    gpuShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    gpuShopC.addEventListener('drop', cambiarGpu);
+    //Eventos DnD de Storage//
+    imgStorage.addEventListener('dragstart',moviendoStorage);
+    storageShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    storageShopC.addEventListener('drop', cambiarStorage);
+    //Eventos DnD de PSU//
+    imgPsu.addEventListener('dragstart',moviendoPsu);
+    psuShopC.addEventListener('dragover',event=>{event.preventDefault()});
+    psuShopC.addEventListener('drop', cambiarPsu);
 
+    //EventListener de Motherboard//
+    selectMother.addEventListener('change', selectedMother);
+    motherBoardBtn.addEventListener('click',resetMother);
+    //EventListener de Procesador//
+    selectProc.addEventListener('change', selectedProcesor);
+    procesorBtn.addEventListener('click',resetProcesor);
+    //EventListener de Cooler//
+    selectCooler.addEventListener('change', selectedCooler);
+    coolerBtn.addEventListener('click',resetCooler);
+    //EventListener de Ram//
+    selectRam.addEventListener('change', selectedRam);
+    ramBtn.addEventListener('click',resetRam);
+    //EventListener de GPU//
+    selectGpu.addEventListener('change', selectedGpu);
+    gpuBtn.addEventListener('click',resetGpu);
+    //EventListener de Storage//
+    selectStorage.addEventListener('change', selectedStorage);
+    storageBtn.addEventListener('click',resetStorage);
+    //EventListener de PSU//
+    selectPsu.addEventListener('change', selectedPsu);
+    psuBtn.addEventListener('click',resetPsu);
+    //EventListener para total//
+    for(let item of preciosObj){
+        item.addEventListener('change',sumTotal)
+        console.log(item.value);
+    }
 
-// ------------------- EventListeners ----------------- //
-
-//EventListener de Motherboard//
-selectMother.addEventListener('change', selectedMother);
-motherBoardBtn.addEventListener('click',resetMother);
-//EventListener de Procesador//
-selectProc.addEventListener('change', selectedProcesor);
-procesorBtn.addEventListener('click',resetProcesor);
-//EventListener de Cooler//
-selectCooler.addEventListener('change', selectedCooler);
-coolerBtn.addEventListener('click',resetCooler);
-//EventListener de Ram//
-selectRam.addEventListener('change', selectedRam);
-ramBtn.addEventListener('click',resetRam);
-//EventListener de GPU//
-selectGpu.addEventListener('change', selectedGpu);
-gpuBtn.addEventListener('click',resetGpu);
-//EventListener de Storage//
-selectStorage.addEventListener('change', selectedStorage);
-storageBtn.addEventListener('click',resetStorage);
-//EventListener de PSU//
-selectPsu.addEventListener('change', selectedPsu);
-psuBtn.addEventListener('click',resetPsu);
-//EventListener para total//
-for(let item of preciosObj){
-    item.addEventListener('change',sumTotal)
 }
+// ---------------------- Inicio de eventos -------------------- //
+document.addEventListener('DOMContentLoaded',domCargado);
