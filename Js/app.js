@@ -4,6 +4,7 @@
 // ------------------- Variables ---------------------- //
 var preciosObj;
 var totalObj;
+var total;
 // Variables de Motherboard //
 var motherItem;
 var selectMother;
@@ -233,14 +234,18 @@ function sumTotal() {
     let total = 0;
 
     for (let item of preciosObj) {
-        // Verifica si el valor no es una cadena vacía y es un número
-        if (item.value !== "Vacio" && !isNaN(item.value)) {
-            // Convierte el valor a número y suma al total
-            console.log(item.value);
-            total += parseFloat(item.value);
+         // Verifica si el valor no es una cadena vacía y es un número
+        if (item.value !== "Vacio"&& !isNaN(item.value)){
+            // Convierte el valor a número y quita los puntps 
+            let numericValue = parseFloat(item.value.replace(/\./g, ''));
+            // Suma el valor 
+            total += numericValue;
         }
     }
-    totalObj.value= total
+    // Aca uso toLocaleString para volver el resultado a un formato de string local
+    // en este caso es-ES que seria un subtag de lenguaje de region del BCP47
+    // para mas información de los tag y sub tags consultar la lista de subtags de IANA 
+    totalObj.value= total.toLocaleString();
 
 }
 
@@ -300,64 +305,59 @@ function domCargado(){
     preciosObj=document.getElementsByClassName('precioObj');
     // Carga de Resultado total //
     totalObj=document.getElementById('total');
-
-    
-    //Eventos DnD de Motherboard//
+    // Eventos DnD de Motherboard//
     imgMother.addEventListener('dragstart',moviendoMother);
     motherShopC.addEventListener('dragover',event=>{event.preventDefault()});
     motherShopC.addEventListener('drop', cambiarMother);
-    //Eventos DnD de Procesador//
+    // Eventos DnD de Procesador//
     imgProc.addEventListener('dragstart',moviendoProc);
     procShopC.addEventListener('dragover',event=>{event.preventDefault()});
     procShopC.addEventListener('drop', cambiarProc);
-    //Eventos DnD de Cooler//
+    // Eventos DnD de Cooler//
     imgCooler.addEventListener('dragstart',moviendoCooler);
     coolerShopC.addEventListener('dragover',event=>{event.preventDefault()});
     coolerShopC.addEventListener('drop', cambiarCooler);
-    //Eventos DnD de Ram//
+    // Eventos DnD de Ram//
     imgRam.addEventListener('dragstart',moviendoRam);
     ramShopC.addEventListener('dragover',event=>{event.preventDefault()});
     ramShopC.addEventListener('drop', cambiarRam);
-    //Eventos DnD de GPU//
+    // Eventos DnD de GPU//
     imgGpu.addEventListener('dragstart',moviendoGpu);
     gpuShopC.addEventListener('dragover',event=>{event.preventDefault()});
     gpuShopC.addEventListener('drop', cambiarGpu);
-    //Eventos DnD de Storage//
+    // Eventos DnD de Storage//
     imgStorage.addEventListener('dragstart',moviendoStorage);
     storageShopC.addEventListener('dragover',event=>{event.preventDefault()});
     storageShopC.addEventListener('drop', cambiarStorage);
-    //Eventos DnD de PSU//
+    // Eventos DnD de PSU//
     imgPsu.addEventListener('dragstart',moviendoPsu);
     psuShopC.addEventListener('dragover',event=>{event.preventDefault()});
     psuShopC.addEventListener('drop', cambiarPsu);
 
-    //EventListener de Motherboard//
+    // EventListener de Motherboard//
     selectMother.addEventListener('change', selectedMother);
     motherBoardBtn.addEventListener('click',resetMother);
-    //EventListener de Procesador//
+    // EventListener de Procesador//
     selectProc.addEventListener('change', selectedProcesor);
     procesorBtn.addEventListener('click',resetProcesor);
-    //EventListener de Cooler//
+    // EventListener de Cooler//
     selectCooler.addEventListener('change', selectedCooler);
     coolerBtn.addEventListener('click',resetCooler);
-    //EventListener de Ram//
+    // EventListener de Ram//
     selectRam.addEventListener('change', selectedRam);
     ramBtn.addEventListener('click',resetRam);
-    //EventListener de GPU//
+    // EventListener de GPU//
     selectGpu.addEventListener('change', selectedGpu);
     gpuBtn.addEventListener('click',resetGpu);
-    //EventListener de Storage//
+    // EventListener de Storage//
     selectStorage.addEventListener('change', selectedStorage);
     storageBtn.addEventListener('click',resetStorage);
-    //EventListener de PSU//
+    // EventListener de PSU//
     selectPsu.addEventListener('change', selectedPsu);
     psuBtn.addEventListener('click',resetPsu);
-    //EventListener para total//
-    for(let item of preciosObj){
-        item.addEventListener('change',sumTotal)
-        console.log(item.value);
-    }
 
 }
 // ---------------------- Inicio de eventos -------------------- //
 document.addEventListener('DOMContentLoaded',domCargado);
+document.addEventListener('drop',sumTotal);
+document.addEventListener('click',sumTotal);
